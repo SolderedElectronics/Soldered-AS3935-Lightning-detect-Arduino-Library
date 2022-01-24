@@ -106,11 +106,13 @@ float measureTime()
   int counter = 0;
   bool curr = 0, prev = 0;
   counter = 0;
-  while(PIND & B00010000); //Read pin state using register PIND, digitalRead takes about 10 times more time
+  //while(PIND & B00010000); //If Arduino board is used, this line can be uncommented for more precise measure
+  while(digitalRead(4));  //If Arduino board is used, this line can be commented for more precise measure
   start = micros(); //Take timestamp of start
   while(counter < 50) //Measure time for 50 cycles
   {
-    curr = PIND & B00010000;
+    //curr = PIND & B00010000;  //If Arduino board is used, this line can be uncommented for more precise measure
+    curr = digitalRead(intPin); //If Arduino board is used, this line can be commented for more precise measure
     if(curr == 1 && prev == 0) //If state is changed from 0 to 1
     {
       counter++;

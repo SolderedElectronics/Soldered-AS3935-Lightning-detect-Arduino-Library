@@ -15,6 +15,6 @@ AS3935::AS3935()
 {
 }
 
-AS3935::AS3935(i2cAddress address) : SparkFun_AS3935(address )
+AS3935::AS3935(i2cAddress address) : SparkFun_AS3935(address)
 {
 }

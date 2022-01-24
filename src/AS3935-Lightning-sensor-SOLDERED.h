@@ -18,13 +18,11 @@
 class AS3935 : public SparkFun_AS3935
 {
   public:
-  AS3935();
-  AS3935(i2cAddress address);
+    AS3935();
+    AS3935(i2cAddress address);
 
   protected:
-
   private:
-
 };
 
 #endif

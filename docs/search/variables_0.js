@@ -1,4 +1,11 @@
 var searchData=
 [
-  ['address_0',['address',['../class_e_a_s_y_c___s_o_l_d_e_r_e_d___l_i_b_s_1_1_easy_c.html#a1dd9b5dd497f94fc119e877216ee51ca',1,'EASYC_SOLDERED_LIBS::EasyC']]]
+  ['_5faddress_0',['_address',['../class_spark_fun___a_s3935.html#a76637758ddf64b7c05c17e94f30fc39b',1,'SparkFun_AS3935']]],
+  ['_5fcs_1',['_cs',['../class_spark_fun___a_s3935.html#a2630ca5d7eb39bcbf8b0377a22fd4f79',1,'SparkFun_AS3935']]],
+  ['_5fi2cport_2',['_i2cPort',['../class_spark_fun___a_s3935.html#a6f6debad1a2db850c9c64a30a328d294',1,'SparkFun_AS3935']]],
+  ['_5fi2cwrite_3',['_i2cWrite',['../class_spark_fun___a_s3935.html#abec6cc65f03bc89bfd26860bd9963ab2',1,'SparkFun_AS3935']]],
+  ['_5fregvalue_4',['_regValue',['../class_spark_fun___a_s3935.html#a427ebdcc3b4bd6dfdd980c9d6d577eaf',1,'SparkFun_AS3935']]],
+  ['_5fspiport_5',['_spiPort',['../class_spark_fun___a_s3935.html#a80e970168cf71d7ba778fdac3f9ebfa8',1,'SparkFun_AS3935']]],
+  ['_5fspiportspeed_6',['_spiPortSpeed',['../class_spark_fun___a_s3935.html#a5156766bd5a600fb9ee70125f61f02a8',1,'SparkFun_AS3935']]],
+  ['_5fspiwrite_7',['_spiWrite',['../class_spark_fun___a_s3935.html#a556950f592096a094db71f0038d762f4',1,'SparkFun_AS3935']]]
 ];

@@ -24,10 +24,12 @@
 */
 var NAVTREE =
 [
-  [ "16x2 easyC LCD Library", "index.html", [
-    [ "NAZIV PROIZVODA Arduino library", "index.html", null ],
-    [ "Namespaces", "namespaces.html", [
-      [ "Namespace List", "namespaces.html", "namespaces_dup" ]
+  [ "AS3935 with easyC Library", "index.html", [
+    [ "AS3935 Lightning sensor breakout board Arduino library", "index.html", null ],
+    [ "Subject of the issue", "md_src_libs__spark_fun__a_s3935__lightning__detector__arduino__library_master__i_s_s_u_e__t_e_m_p_l_a_t_e.html", null ],
+    [ "SparkFun License Information", "md_src_libs__spark_fun__a_s3935__lightning__detector__arduino__library_master__l_i_c_e_n_s_e.html", [
+      [ "Hardware", "md_src_libs__spark_fun__a_s3935__lightning__detector__arduino__library_master__l_i_c_e_n_s_e.html#autotoc_md12", null ],
+      [ "Code", "md_src_libs__spark_fun__a_s3935__lightning__detector__arduino__library_master__l_i_c_e_n_s_e.html#autotoc_md13", null ]
     ] ],
     [ "Classes", "annotated.html", [
       [ "Class List", "annotated.html", "annotated_dup" ],
@@ -40,14 +42,21 @@ var NAVTREE =
       ] ]
     ] ],
     [ "Files", "files.html", [
-      [ "File List", "files.html", "files_dup" ]
+      [ "File List", "files.html", "files_dup" ],
+      [ "File Members", "globals.html", [
+        [ "All", "globals.html", null ],
+        [ "Variables", "globals_vars.html", null ],
+        [ "Typedefs", "globals_type.html", null ],
+        [ "Enumerations", "globals_enum.html", null ],
+        [ "Enumerator", "globals_eval.html", null ]
+      ] ]
     ] ]
   ] ]
 ];
 
 var NAVTREEINDEX =
 [
-"_generic-easy_c-_s_o_l_d_e_r_e_d_8cpp.html"
+"_a_s3935-_lightning-sensor-_s_o_l_d_e_r_e_d_8cpp.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

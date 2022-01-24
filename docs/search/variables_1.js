@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['begindone_0',['beginDone',['../class_e_a_s_y_c___s_o_l_d_e_r_e_d___l_i_b_s_1_1_easy_c.html#aa55074f480410ec00272d0a23b540074',1,'EASYC_SOLDERED_LIBS::EasyC']]]
+  ['addronehigh_0',['addrOneHigh',['../_spark_fun___a_s3935_8h.html#a4a8f34e876bc0151e68565fe8b9022cc',1,'SparkFun_AS3935.h']]],
+  ['addrzerohigh_1',['addrZeroHigh',['../_spark_fun___a_s3935_8h.html#a68312f502cf2bf4fcc6c63d6f372339c',1,'SparkFun_AS3935.h']]]
 ];

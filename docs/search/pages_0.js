@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['naziv_20proizvoda_20arduino_20library_0',['NAZIV PROIZVODA Arduino library',['../index.html',1,'']]]
+  ['as3935_20lightning_20sensor_20breakout_20board_20arduino_20library_0',['AS3935 Lightning sensor breakout board Arduino library',['../index.html',1,'']]]
 ];

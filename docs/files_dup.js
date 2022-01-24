@@ -1,11 +1,9 @@
 var files_dup =
 [
-    [ "Generic-easyC-SOLDERED.cpp", "_generic-easy_c-_s_o_l_d_e_r_e_d_8cpp.html", null ],
-    [ "Generic-easyC-SOLDERED.h", "_generic-easy_c-_s_o_l_d_e_r_e_d_8h.html", [
-      [ "Sensor", "class_sensor.html", "class_sensor" ]
+    [ "AS3935-Lightning-sensor-SOLDERED.cpp", "_a_s3935-_lightning-sensor-_s_o_l_d_e_r_e_d_8cpp.html", null ],
+    [ "AS3935-Lightning-sensor-SOLDERED.h", "_a_s3935-_lightning-sensor-_s_o_l_d_e_r_e_d_8h.html", [
+      [ "AS3935", "class_a_s3935.html", "class_a_s3935" ]
     ] ],
-    [ "easyC.cpp", "easy_c_8cpp.html", null ],
-    [ "easyC.h", "easy_c_8h.html", [
-      [ "EASYC_SOLDERED_LIBS::EasyC", "class_e_a_s_y_c___s_o_l_d_e_r_e_d___l_i_b_s_1_1_easy_c.html", "class_e_a_s_y_c___s_o_l_d_e_r_e_d___l_i_b_s_1_1_easy_c" ]
-    ] ]
+    [ "SparkFun_AS3935.cpp", "_spark_fun___a_s3935_8cpp.html", null ],
+    [ "SparkFun_AS3935.h", "_spark_fun___a_s3935_8h.html", "_spark_fun___a_s3935_8h" ]
 ];

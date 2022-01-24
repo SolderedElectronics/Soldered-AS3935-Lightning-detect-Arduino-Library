@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['sendaddress_0',['sendAddress',['../class_e_a_s_y_c___s_o_l_d_e_r_e_d___l_i_b_s_1_1_easy_c.html#a7f716bbd85e3792cae6499061a7835f7',1,'EASYC_SOLDERED_LIBS::EasyC']]],
-  ['senddata_1',['sendData',['../class_e_a_s_y_c___s_o_l_d_e_r_e_d___l_i_b_s_1_1_easy_c.html#a8296d38ba78ba4d45804a5db26663d71',1,'EASYC_SOLDERED_LIBS::EasyC']]],
-  ['sensor_2',['Sensor',['../class_sensor.html#a2b8ea6b15267f6fa0e263f57a09f6b62',1,'Sensor']]]
+  ['displayoscillator_0',['displayOscillator',['../class_spark_fun___a_s3935.html#a83fff278e8147f27516c3fee4989e344',1,'SparkFun_AS3935']]],
+  ['distancetostorm_1',['distanceToStorm',['../class_spark_fun___a_s3935.html#a39f516de53827e940c65faa4e4265cc6',1,'SparkFun_AS3935']]]
 ];

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['easyc_0',['EasyC',['../class_e_a_s_y_c___s_o_l_d_e_r_e_d___l_i_b_s_1_1_easy_c.html#aea626d369c76c341ddbb3b3b56ca1466',1,'EASYC_SOLDERED_LIBS::EasyC']]]
+  ['as3935_0',['AS3935',['../class_a_s3935.html#aacf65cfc8a3e646bfb80b4d07f15193b',1,'AS3935::AS3935()'],['../class_a_s3935.html#a8d28b52af57017c17ce84a9b2a8946b8',1,'AS3935::AS3935(i2cAddress address)']]]
 ];

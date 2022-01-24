@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['begin_0',['begin',['../class_e_a_s_y_c___s_o_l_d_e_r_e_d___l_i_b_s_1_1_easy_c.html#a6cc54c42df12088fb26c95d7aabb4534',1,'EASYC_SOLDERED_LIBS::EasyC::begin()'],['../class_e_a_s_y_c___s_o_l_d_e_r_e_d___l_i_b_s_1_1_easy_c.html#aaf85911806bdd2b01162047e53c0090b',1,'EASYC_SOLDERED_LIBS::EasyC::begin(uint8_t _address)']]]
+  ['_5freadregister_0',['_readRegister',['../class_spark_fun___a_s3935.html#af3012cd020d6bf16804481b3e6bf9dac',1,'SparkFun_AS3935']]],
+  ['_5fwriteregister_1',['_writeRegister',['../class_spark_fun___a_s3935.html#afff80d630c2cb55892c433860757a0a7',1,'SparkFun_AS3935']]]
 ];

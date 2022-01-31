@@ -26,7 +26,7 @@
 // Adjust the address jumpers on the underside of the product. 
 #define AS3935_ADDR 0x03 
 #define ANTFREQ 3
-#define intPin 4
+#define intPin 2
 
 // Chip select for SPI on pin ten.
 int spiCS = 10; 
@@ -107,7 +107,7 @@ float measureTime()
   bool curr = 0, prev = 0;
   counter = 0;
   //while(PIND & B00010000); //If Arduino board is used, this line can be uncommented for more precise measure
-  while(digitalRead(4));  //If Arduino board is used, this line can be commented for more precise measure
+  while(digitalRead(intPin));  //If Arduino board is used, this line can be commented for more precise measure
   start = micros(); //Take timestamp of start
   while(counter < 50) //Measure time for 50 cycles
   {

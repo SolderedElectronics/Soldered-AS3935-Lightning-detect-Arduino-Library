@@ -150,6 +150,11 @@ void setup()
    // Serial.println("Successfully woken up!");  
   //else 
     //Serial.println("Error recalibrating internal osciallator on wake up."); 
+
+  // Once you run Self calibration example, you will get calibrated 
+  // internal capacitor value to get frequency as closest to 500 kHz
+  // as possible and that value should be entered here
+  // lightning.tuneCap(32);
   
   // Set too many features? Reset them all with the following function.
   lightning.resetSettings();
@@ -186,4 +191,3 @@ void loop()
     }
   }
 }
-

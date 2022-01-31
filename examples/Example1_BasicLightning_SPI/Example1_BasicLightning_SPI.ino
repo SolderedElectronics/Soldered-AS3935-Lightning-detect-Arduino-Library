@@ -57,6 +57,11 @@ void setup()
   // the cost of less sensitivity, if you plan on using this outdoors 
   // uncomment the following line:
   //lightning.setIndoorOutdoor(OUTDOOR); 
+
+  // Once you run Self calibration example, you will get calibrated 
+  // internal capacitor value to get frequency as closest to 500 kHz
+  // as possible and that value should be entered here
+  // lightning.tuneCap(32);
 }
 
 void loop()
@@ -88,4 +93,3 @@ void loop()
   }
   delay(100); // Slow it down.
 }
-

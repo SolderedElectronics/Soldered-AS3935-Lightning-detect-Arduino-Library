@@ -27,6 +27,7 @@
 #define AS3935_ADDR 0x03 
 #define ANTFREQ 3
 #define intPin 2
+#define TIMEOUT_uS 1000
 
 // Chip select for SPI on pin ten.
 int spiCS = 10; 
@@ -45,14 +46,13 @@ void setup()
   Serial.begin(115200); 
   Serial.println("AS3935 Franklin Lightning Detector"); 
 
-   SPI.begin(); // For SPI
+  SPI.begin(); // For SPI
   if( !lightning.beginSPI(spiCS) ) { 
     Serial.println ("Lightning Detector did not start up, freezing!"); 
     while(1); 
   }
   else
-    Serial.println("Ready to tune antenna!");
-    
+  Serial.println("Ready to tune antenna!");
   Serial.println("-----------------------");
 
 
@@ -66,7 +66,7 @@ void setup()
   lightning.displayOscillator(true, ANTFREQ); 
   delay(20);
 
-  float curr = 0, best = 999;
+  float curr = 0, temp = 0, best = 999;
   int bestIteration=0;
   for(int i=0; i<16; i++) //Unfortunatelly this is the easiest way to find smallest difference in desired and measured time
   {
@@ -75,7 +75,17 @@ void setup()
     curr = 0;
     for(int j = 0; j < 10; j++) //Measuring time 10 times and averageing
     {
+      temp = measureTime();
+      if (temp == 0)
+      {
+        Serial.println("Error! Interrupt pin is not connected!");
+        break;
+      }
       curr += measureTime();
+    }
+    if(temp == 0)
+    {
+      break;
     }
     curr /= 10;
     if(abs(32 - curr) < best) //Checking if current is better than previous best
@@ -85,16 +95,19 @@ void setup()
     }
     
   }
-  lightning.tuneCap(8 * bestIteration);
+  if(temp)
+  {
+    lightning.tuneCap(8 * bestIteration);
 
-  Serial.println("Sensor is calibrated to best internal capacitor value!");
-  Serial.print("Capacitor value after calibration: ");
-  Serial.print(lightning.readTuneCap());
-  Serial.println(" pF.");
-  Serial.print("Frequency after calibration: ");
-  Serial.print(1 / measureTime() * 16 * 1000);
-  Serial.println(" kHz.");
-  Serial.println(measureTime());
+    Serial.println("Sensor is calibrated to best internal capacitor value!");
+    Serial.print("Capacitor value after calibration: ");
+    Serial.print(lightning.readTuneCap());
+    Serial.println(" pF.");
+    Serial.print("Frequency after calibration: ");
+    Serial.print(1 / measureTime() * 16 * 1000);
+    Serial.println(" kHz.");
+    Serial.println(measureTime());
+  }
 }
 
 void loop() {
@@ -106,8 +119,15 @@ float measureTime()
   int counter = 0;
   bool curr = 0, prev = 0;
   counter = 0;
-  //while(PIND & B00010000); //If Arduino board is used, this line can be uncommented for more precise measure
-  while(digitalRead(intPin));  //If Arduino board is used, this line can be commented for more precise measure
+  start = micros();
+  //while(PIND & B00010000) //If Arduino board is used, this line can be uncommented for more precise measure
+  while(digitalRead(intPin))  //If Arduino board is used, this line can be commented for more precise measure
+  {
+    if( (micros() - start) > TIMEOUT_uS)
+    {
+      return 0;
+    }
+  }
   start = micros(); //Take timestamp of start
   while(counter < 50) //Measure time for 50 cycles
   {

@@ -26,11 +26,6 @@ var NAVTREE =
 [
   [ "AS3935 with easyC Library", "index.html", [
     [ "AS3935 Lightning sensor breakout board Arduino library", "index.html", null ],
-    [ "Subject of the issue", "md_src_libs__spark_fun__a_s3935__lightning__detector__arduino__library_master__i_s_s_u_e__t_e_m_p_l_a_t_e.html", null ],
-    [ "SparkFun License Information", "md_src_libs__spark_fun__a_s3935__lightning__detector__arduino__library_master__l_i_c_e_n_s_e.html", [
-      [ "Hardware", "md_src_libs__spark_fun__a_s3935__lightning__detector__arduino__library_master__l_i_c_e_n_s_e.html#autotoc_md12", null ],
-      [ "Code", "md_src_libs__spark_fun__a_s3935__lightning__detector__arduino__library_master__l_i_c_e_n_s_e.html#autotoc_md13", null ]
-    ] ],
     [ "Classes", "annotated.html", [
       [ "Class List", "annotated.html", "annotated_dup" ],
       [ "Class Index", "classes.html", null ],

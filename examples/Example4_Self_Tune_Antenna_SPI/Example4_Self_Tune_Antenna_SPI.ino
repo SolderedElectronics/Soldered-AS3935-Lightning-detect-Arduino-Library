@@ -19,7 +19,6 @@
  ***************************************************/
 
 #include <SPI.h>
-#include <Wire.h>
 #include "AS3935-Lightning-sensor-SOLDERED.h"
 
 // 0x03 is default, but the address can also be 0x02, or 0x01.
@@ -34,7 +33,7 @@ int spiCS = 10;
 
 // SPI
 AS3935 lightning;
-                                               
+
 uint32_t start,finish;
 byte divVal = 16; 
 const float ideal_time = 32;  //when using divider 16
@@ -45,6 +44,8 @@ void setup()
 
   Serial.begin(115200); 
   Serial.println("AS3935 Franklin Lightning Detector"); 
+
+  pinMode(intPin,INPUT);
 
   SPI.begin(); // For SPI
   if( !lightning.beginSPI(spiCS) ) { 
@@ -68,10 +69,10 @@ void setup()
 
   float curr = 0, temp = 0, best = 999;
   int bestIteration=0;
-  for(int i=0; i<16; i++) //Unfortunatelly this is the easiest way to find smallest difference in desired and measured time
+  for(int i=0; i < 16; i++) //Unfortunatelly this is the easiest way to find smallest difference in desired and measured time
   {
-    lightning.tuneCap(8 * i); //Set current intex to capacitor value
-    delay(2); //Time to stabilise frequency
+    lightning.tuneCap(8 * i); //Set current index to capacitor value
+    delay(50); //Time to stabilise frequency
     curr = 0;
     for(int j = 0; j < 10; j++) //Measuring time 10 times and averageing
     {
@@ -81,13 +82,13 @@ void setup()
         Serial.println("Error! Interrupt pin is not connected!");
         break;
       }
-      curr += measureTime();
+      curr += temp;
     }
     if(temp == 0)
     {
       break;
     }
-    curr /= 10;
+    curr /= 10.0;
     if(abs(32 - curr) < best) //Checking if current is better than previous best
     {
       best = abs(32 - curr);
@@ -98,15 +99,18 @@ void setup()
   if(temp)
   {
     lightning.tuneCap(8 * bestIteration);
-
+    delay(10); //Wait for frequency to stabilize
     Serial.println("Sensor is calibrated to best internal capacitor value!");
     Serial.print("Capacitor value after calibration: ");
     Serial.print(lightning.readTuneCap());
     Serial.println(" pF.");
     Serial.print("Frequency after calibration: ");
-    Serial.print(1 / measureTime() * 16 * 1000);
+    temp = measureTime();
+    delay(1000);
+    temp = measureTime();
+    Serial.print(1 / temp * 16 * 1000);
     Serial.println(" kHz.");
-    Serial.println(measureTime());
+    Serial.println(temp);
   }
 }
 
@@ -139,6 +143,12 @@ float measureTime()
     }
     prev = curr;
   }
+#ifdef ARDUINO_STM32F103 || ARDUINO_NUCLEO_F103RB
+  finish = micros();  //Compensation for commands timer didn't counted and add to timestamp on end of counting
+#elif ARDUINO_NUCLEO_L053R8
+  finish = micros() + 15;  //Compensation for commands timer didn't counted and add to timestamp on end of counting
+#else
   finish = micros() + 25;  //Compensation for commands timer didn't counted and add to timestamp on end of counting
+#endif
   return (finish - start) / 50.0; //Divide with 50 to get time for one cycle
 }

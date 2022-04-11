@@ -18,7 +18,6 @@
  *  Modified by Soldered.com
  ***************************************************/
 
-#include <SPI.h>
 #include <Wire.h>
 #include "AS3935-Lightning-sensor-SOLDERED.h"
 
@@ -30,7 +29,7 @@
 #define TIMEOUT_uS 1000
 
 AS3935 lightning(AS3935_ADDR);
-                                               
+
 uint32_t start,finish;
 byte divVal = 16; 
 const float ideal_time = 32;  //when using divider 16
@@ -41,6 +40,8 @@ void setup()
 
   Serial.begin(115200); 
   Serial.println("AS3935 Franklin Lightning Detector"); 
+
+  pinMode(intPin,INPUT);
 
   Wire.begin(); // Begin Wire before lightning sensor. 
   if( !lightning.begin() ){ // Initialize the sensor. 

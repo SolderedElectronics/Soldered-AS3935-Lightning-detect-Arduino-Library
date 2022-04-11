@@ -15,8 +15,6 @@
  *  Modified by Soldered.com
  ***************************************************/
 
-
-#include <SPI.h>
 #include <Wire.h>
 #include "AS3935-Lightning-sensor-SOLDERED.h"
 
@@ -154,7 +152,16 @@ void setup()
   // Once you run Self calibration example, you will get calibrated 
   // internal capacitor value to get frequency as closest to 500 kHz
   // as possible and that value should be entered here
-  // lightning.tuneCap(32);
+  lightning.tuneCap(112);
+
+  // In order to get precise measurements, internal RCO calibration
+  // should be done. This ensures optimal frequencies of internal
+  // oscilators which captures noise from the lightnings on same 
+  // frequencies.
+  if(lightning.calibrateOsc())
+    Serial.println("Sensor calibrated.");
+  else
+    Serial.println("Sensor couldn't calibrate successfully!");
   
   // Set too many features? Reset them all with the following function.
   lightning.resetSettings();

@@ -16,7 +16,6 @@
  ***************************************************/
 
 #include <SPI.h>
-#include <Wire.h>
 #include "AS3935-Lightning-sensor-SOLDERED.h"
 
 #define INDOOR 0x12 
@@ -27,7 +26,6 @@
 
 // SPI
 AS3935 lightning;
-
 
 // Interrupt pin for lightning detection 
 const int lightningInt = 4; 
@@ -40,7 +38,6 @@ byte noiseFloor = 2;
 byte watchDogVal = 2;
 byte spike = 2;
 byte lightningThresh = 1; 
-
 
 // This variable holds the number representing the lightning or non-lightning
 // event issued by the lightning detector. 
@@ -123,7 +120,6 @@ void setup()
   Serial.print("Spike Rejection is set to: ");
   Serial.println(spikeVal);
 
-
   // This setting will change when the lightning detector issues an interrupt.
   // For example you will only get an interrupt after five lightning strikes
   // instead of one. Default is one, and it takes settings of 1, 5, 9 and 16.   
@@ -158,7 +154,16 @@ void setup()
   // Once you run Self calibration example, you will get calibrated 
   // internal capacitor value to get frequency as closest to 500 kHz
   // as possible and that value should be entered here
-  // lightning.tuneCap(32);
+  lightning.tuneCap(112);
+
+  // In order to get precise measurements, internal RCO calibration
+  // should be done. This ensures optimal frequencies of internal
+  // oscilators which captures noise from the lightnings on same 
+  // frequencies.
+  if(lightning.calibrateOsc())
+    Serial.println("Sensor calibrated.");
+  else
+    Serial.println("Sensor couldn't calibrate successfully!");
   
   // Set too many features? Reset them all with the following function.
   lightning.resetSettings();

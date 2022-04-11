@@ -21,7 +21,6 @@
  ***************************************************/
 
 #include <SPI.h>
-#include <Wire.h>
 #include "AS3935-Lightning-sensor-SOLDERED.h"
 
 #define ANTFREQ 3
@@ -90,13 +89,11 @@ void setup()
   // resonance frequency of the antenna is tightly trimmed. They are calibrated
   // off of the antenna frequency. 
 
-  //if(lightning.calibrateOsc());
-      //Serial.println("Successfully Calibrated!");
-    //else
-      //Serial.println("Not Successfully Calibrated!");
+  if(lightning.calibrateOsc())
+    Serial.println("Successfully Calibrated!");
+  else
+    Serial.println("Not Successfully Calibrated!");
 }
 
 void loop() {
 }
-
-

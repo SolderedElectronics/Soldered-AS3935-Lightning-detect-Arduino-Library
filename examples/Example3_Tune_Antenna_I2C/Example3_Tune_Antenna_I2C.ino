@@ -20,7 +20,6 @@
  *  Modified by Soldered.com
  ***************************************************/
 
-#include <SPI.h>
 #include <Wire.h>
 #include "AS3935-Lightning-sensor-SOLDERED.h"
 
@@ -94,11 +93,7 @@ void setup()
       //Serial.println("Successfully Calibrated!");
     //else
       //Serial.println("Not Successfully Calibrated!");
-      
-  
 }
 
 void loop() {
 }
-
-

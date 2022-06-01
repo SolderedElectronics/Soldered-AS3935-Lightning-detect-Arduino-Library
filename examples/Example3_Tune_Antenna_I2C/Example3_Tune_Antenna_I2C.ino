@@ -30,6 +30,9 @@
 
 AS3935 lightning(AS3935_ADDR);
 
+// Interrupt pin for lightning detection
+const int intPin = 4;
+
 void setup()
 {
   Serial.begin(115200); 

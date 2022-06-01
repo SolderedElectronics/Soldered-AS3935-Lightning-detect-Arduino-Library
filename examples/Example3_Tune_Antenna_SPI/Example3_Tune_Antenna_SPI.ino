@@ -31,6 +31,9 @@ int spiCS = 10;
 // SPI
 AS3935 lightning;
 
+// Interrupt pin for lightning detection
+const int intPin = 4;
+
 void setup()
 {
   Serial.begin(115200); 

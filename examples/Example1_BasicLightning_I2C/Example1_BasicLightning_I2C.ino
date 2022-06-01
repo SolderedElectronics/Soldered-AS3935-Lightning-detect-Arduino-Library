@@ -30,7 +30,7 @@
 AS3935 lightning(AS3935_ADDR);
 
 // Interrupt pin for lightning detection
-const int lightningInt = 4;
+const int intPin = 4;
 
 // This variable holds the number representing the lightning or non-lightning
 // event issued by the lightning detector.
@@ -41,7 +41,7 @@ int disturber = 2; // Value between 1-10
 void setup()
 {
   // When lightning is detected the interrupt pin goes HIGH.
-  pinMode(lightningInt, INPUT);
+  pinMode(intPin, INPUT);
 
   Serial.begin(115200);
   Serial.println("AS3935 Franklin Lightning Detector");
@@ -60,24 +60,14 @@ void setup()
   // uncomment the following line:
   lightning.setIndoorOutdoor(OUTDOOR);
 
-  // Once you run Self calibration example, you will get calibrated
-  // internal capacitor value to get frequency as closest to 500 kHz
-  // as possible and that value should be entered here
-  lightning.tuneCap(112);
-
-  // In order to get precise measurements, internal RCO calibration
-  // should be done. This ensures optimal frequencies of internal
-  // oscilators which captures noise from the lightnings on same
-  // frequencies.
-  if (lightning.calibrateOsc())
-    Serial.println("Sensor calibrated.");
-  else
-    Serial.println("Sensor couldn't calibrate successfully!");
+    // This line should be called before using sensor. This function
+  // calibrates lightning sensor.
+  lightning.tuneAntenna();
 }
 
 void loop()
 {
-  if (digitalRead(lightningInt) == HIGH) {
+  if (digitalRead(intPin) == HIGH) {
     // Hardware has alerted us to an event, now we read the interrupt register
     // to see exactly what it is.
     intVal = lightning.readInterruptReg();

@@ -2,6 +2,7 @@ var NAVTREEINDEX0 =
 {
 "_a_s3935-_lightning-sensor-_s_o_l_d_e_r_e_d_8cpp.html":[2,0,0,1],
 "_a_s3935-_lightning-sensor-_s_o_l_d_e_r_e_d_8h.html":[2,0,0,2],
+"_a_s3935-_lightning-sensor-_s_o_l_d_e_r_e_d_8h.html#a5049082944f24e1b01b5ff22b3c1e238":[2,0,0,2,1],
 "_a_s3935-_lightning-sensor-_s_o_l_d_e_r_e_d_8h_source.html":[2,0,0,2],
 "_spark_fun___a_s3935_8cpp.html":[2,0,0,0,0,0,0],
 "_spark_fun___a_s3935_8h.html":[2,0,0,0,0,0,1],
@@ -50,7 +51,9 @@ var NAVTREEINDEX0 =
 "annotated.html":[1,0],
 "class_a_s3935.html":[1,0,0],
 "class_a_s3935.html#a8d28b52af57017c17ce84a9b2a8946b8":[1,0,0,1],
+"class_a_s3935.html#aac3cd86e26cf1205c3384cbe3d565f38":[1,0,0,2],
 "class_a_s3935.html#aacf65cfc8a3e646bfb80b4d07f15193b":[1,0,0,0],
+"class_a_s3935.html#ae39602f202698b4a476575f5347ea41f":[1,0,0,3],
 "class_spark_fun___a_s3935.html":[1,0,1],
 "class_spark_fun___a_s3935.html#a05c49f441aea3b5a0a42112119a95b78":[1,0,1,21],
 "class_spark_fun___a_s3935.html#a2630ca5d7eb39bcbf8b0377a22fd4f79":[1,0,1,32],
